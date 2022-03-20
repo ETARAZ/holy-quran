@@ -41,10 +41,10 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps(context) {
   const { surah } = context.params;
-  console.log("surah number " + surah);
+  console.log(surah + " worked ");
   const res = await axios.get("http://api.alquran.cloud/v1/surah/" + surah);
 
   return {
-    props: { data: res.data },
+    props: { data: res.data.data },
   };
 }
