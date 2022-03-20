@@ -43,8 +43,9 @@ export async function getStaticProps(context) {
   console.log("surah number " + surah);
   const res = await fetch("http://api.alquran.cloud/v1/surah/" + surah);
   const { data } = await res.json();
+  const serialized = JSON.stringify(data);
 
   return {
-    props: { data },
+    props: { data: serialized },
   };
 }
