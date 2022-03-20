@@ -43,9 +43,6 @@ export async function getStaticProps(context) {
   const res = await fetch("http://api.alquran.cloud/v1/surah/" + singleSurah);
   const { data: surah } = await res.json();
   console.log(surah);
-  surah[
-    "audio"
-  ] = `https://www.humariweb.com/quran/abd-ar/01-(hamariweb.com).mp3`;
 
   return {
     props: { surah },
