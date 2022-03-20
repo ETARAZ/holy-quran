@@ -33,7 +33,7 @@ export default Surah;
 export const getStaticPaths = async () => {
   const res = await axios.get("http://api.alquran.cloud/v1/surah");
   const { data } = res;
-  const paths = data.map((surah) => {
+  const paths = data.data.map((surah) => {
     return { params: { surah: surah.number.toString() } };
   });
   return { paths, fallback: false };
