@@ -1,0 +1,26 @@
+{
+  "name": "holy-quran",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-audio-player": "^0.17.0",
+    "react-dom": "17.0.2",
+    "react-h5-audio-player": "^3.8.3",
+    "sharp": "^0.30.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0",
+    "postcss": "^8.4.8",
+    "tailwindcss": "^3.0.23"
+  }
+}
