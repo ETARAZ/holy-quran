@@ -40,10 +40,8 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps(context) {
   const { surah: singleSurah } = context.params;
-  const promise = await (
-    await fetch("http://api.alquran.cloud/v1/surah/" + singleSurah)
-  ).json();
-  const { data: surah } = promise;
+  const res = await fetch("http://api.alquran.cloud/v1/surah/" + singleSurah);
+  const { data: surah } = await res.json();
   surah[
     "audio"
   ] = `https://www.humariweb.com/quran/abd-ar/01-(hamariweb.com).mp3`;
