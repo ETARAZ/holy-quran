@@ -12,4 +12,4 @@ const convertToArabic = (num) => {
     .join("");
 };
 
-export default convertToArabic;
+export default convertToArabic
