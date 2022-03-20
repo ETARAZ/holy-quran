@@ -2,6 +2,9 @@
   "name": "holy-quran",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -20,6 +23,7 @@
     "autoprefixer": "^10.4.2",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
+    "eslint-plugin-react": "^7.29.4",
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23"
   }

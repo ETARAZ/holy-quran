@@ -1,4 +1,3 @@
-import React from "react";
 import convertToArabic from "../utils/convert-to-arabic";
 function Ayah({ ayah, number }) {
   return (
