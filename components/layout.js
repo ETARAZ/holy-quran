@@ -1,4 +1,4 @@
-import Footer from "./nooter";
+import Footer from "./footer";
 import Nav_bar from "./navbar";
 export default function Layout({ children }) {
   return (
