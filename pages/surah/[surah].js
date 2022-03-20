@@ -1,5 +1,6 @@
 import AudioPlayer from "react-h5-audio-player";
 import Head from "next/head";
+import axios from "axios";
 import "react-h5-audio-player/lib/styles.css";
 import Ayah from "../../components/ayah";
 
@@ -30,8 +31,8 @@ function Surah({ data }) {
 export default Surah;
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://api.alquran.cloud/v1/surah");
-  const { data } = await res.json();
+  const res = await axios.get("http://api.alquran.cloud/v1/surah");
+  const { data } = res;
   const paths = data.map((surah) => {
     return { params: { surah: surah.number.toString() } };
   });
@@ -41,7 +42,7 @@ export const getStaticPaths = async () => {
 export async function getStaticProps(context) {
   const { surah } = context.params;
   console.log("surah number " + surah);
-  const res = await fetch("http://api.alquran.cloud/v1/surah/" + surah);
+  const res = await axios.get("http://api.alquran.cloud/v1/surah/" + surah);
 
   return {
     props: { data: res.data },
