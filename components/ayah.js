@@ -1,6 +1,5 @@
 import convertToArabic from "../utils/convert-to-arabic";
 function Ayah({ ayah, number }) {
-  console.log(number);
   return (
     <span className="inline leading-[2]">
       {ayah}
