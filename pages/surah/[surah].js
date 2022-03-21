@@ -2,8 +2,13 @@ import AudioPlayer from "react-h5-audio-player";
 import Head from "next/head";
 import axios from "axios";
 import "react-h5-audio-player/lib/styles.css";
+<<<<<<< HEAD
 import Ayah from "../../components/ayah";
 import queryFetch from "../../utils/query-fetch";
+=======
+
+
+>>>>>>> d96a399abf0e0a827be2611be8d0fbf2e2cc548c
 function Surah({ data }) {
   return (
     <div className="w-full">
