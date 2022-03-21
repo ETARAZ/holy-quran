@@ -2,7 +2,7 @@ import AudioPlayer from "react-h5-audio-player";
 import Head from "next/head";
 import axios from "axios";
 import "react-h5-audio-player/lib/styles.css";
-import Ayah from "../../components/ayah";
+import Ayah from "../../components/ayah"
 
 function Surah({ data }) {
   return (
