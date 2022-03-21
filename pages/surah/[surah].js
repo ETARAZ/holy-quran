@@ -3,7 +3,7 @@ import Head from "next/head";
 import axios from "axios";
 import "react-h5-audio-player/lib/styles.css";
 import Ayah from "../../components/ayah";
-
+import queryFetch from "../../utils/query-fetch";
 function Surah({ data }) {
   return (
     <div className="w-full">
@@ -42,9 +42,18 @@ export const getStaticPaths = async () => {
 export async function getStaticProps(context) {
   const { surah } = context.params;
   console.log(surah + " worked ");
-  const res = await axios.get("http://api.alquran.cloud/v1/surah/" + surah);
 
+  const response = await queryFetch(
+    "http://api.alquran.cloud/v1/surah/" + surah,
+    {
+      headers: {
+        accept: "application/json",
+      },
+    }
+  );
+
+  const data = await response.json();
   return {
-    props: { data: res.data.data },
+    props: { data },
   };
 }
