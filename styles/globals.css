@@ -18,8 +18,55 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("react-h5-audio-player/lib/styles.css");
+@layer base {
+  .navbar {
+    @apply bg-purple-600 h-16 flex justify-between  items-center px-2;
+  }
+  .navbar-brand {
+    @apply text-white md:text-4xl text-2xl;
+  }
 
+  .navbar-github {
+    @apply bg-white h-10 w-10 rounded-full;
+  }
+  .main-app {
+    @apply mx-auto min-h-[100vh] p-2 w-full max-w-6xl;
+  }
+  .footer {
+    @apply flex justify-center bg-black text-white items-center h-12;
+  }
+}
 @font-face {
   font-family: "QURAN";
   src: url("../public/qc2_warsh_v2-1.ttf");
+}
+
+:root {
+  --player-control-color: white !important;
+  --player-control-yellow-color: yellow !important;
+}
+.rhap_container {
+  background-color: rgb(147 51 234);
+}
+.rhap_container svg,
+.rhap_time {
+  color: var(--player-control-color);
+}
+.rhap_container svg:hover {
+  color: var(--player-control-yellow-color);
+}
+.rhap_progress-indicator {
+  background-color: var(--player-control-color);
+}
+.rhap_progress-filled {
+  background-color: var(--player-control-yellow-color);
+}
+.rhap_volume-bar {
+  background-color: var(--player-control-yellow-color);
+}
+.rhap_volume-indicator {
+  background-color: var(--player-control-color);
+  width: 14px !important;
+  height: 14px !important;
 }

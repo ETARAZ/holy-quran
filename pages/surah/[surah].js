@@ -1,10 +1,9 @@
-import AudioPlayer from "react-h5-audio-player";
 import Head from "next/head";
 import axios from "axios";
-import "react-h5-audio-player/lib/styles.css";
-
+import AudioPlayer from "react-h5-audio-player";
 import Ayah from "../../components/ayah";
-import queryFetch from "../../utils/query-fetch";
+import fetchSurah from "../../utils/fetch-single-surah";
+import { useEffect, useState, useRef } from "react";
 
 function Surah({ data }) {
   return (
@@ -19,7 +18,7 @@ function Surah({ data }) {
       </div>
       <p
         lang="ar"
-        className="font-quran text-3xl  sm:text-4xl md:text-5xl text-center"
+        className="font-quran p-2 bg-purple-500 text-white  text-3xl  sm:text-4xl md:text-5xl text-center"
         style={{ direction: "rtl" }}
       >
         {data.ayahs.map((ayah, i) => (
@@ -43,18 +42,12 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps(context) {
   const { surah } = context.params;
-  console.log(surah + " worked ");
 
-  const response = await queryFetch(
-    "http://api.alquran.cloud/v1/surah/" + surah,
-    {
-      headers: {
-        accept: "application/json",
-      },
-    }
-  );
+  const data = await fetchSurah("http://api.alquran.cloud/v1/surah/" + surah);
+  data["audio"] = `https://www.humariweb.com/quran/abd-ar/${
+    surah > 9 ? surah : "0" + surah
+  }-(hamariweb.com).mp3`;
 
-  const data = await response.json();
   return {
     props: { data },
   };

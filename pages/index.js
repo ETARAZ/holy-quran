@@ -1,9 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import VideoCard from "../components/videocard";
 
 export default function Home({ surahs }) {
-  console.log(surahs);
   return (
     <>
       <Head>

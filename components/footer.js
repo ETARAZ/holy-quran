@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="flex justify-center bg-black text-white items-center h-12">
+    <footer className="footer">
       <p>Created By Napster</p>
     </footer>
   );

@@ -2,9 +2,12 @@
   "name": "holy-quran",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "NEXT_PLUGIN_QUERY_CACHE_ACTIVE=true next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,11 +15,9 @@
     "axios": "^0.26.1",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-audio-player": "^0.17.0",
     "react-dom": "17.0.2",
     "react-h5-audio-player": "^3.8.3",
-    "sharp": "^0.30.3",
-    "next-plugin-query-cache": "2.0.1"
+    "sharp": "^0.30.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
